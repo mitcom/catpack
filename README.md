@@ -1,1 +1,4 @@
-`npm start`
+```bash
+npm init
+npm start
+```
