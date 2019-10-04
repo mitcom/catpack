@@ -1,4 +1,4 @@
-import {WIDTH, BASELINE} from './constants';
+import { WIDTH, BASELINE } from './constants';
 import { GameObject } from './gameObject';
 
 import cat0Src from './img/cats/cat0.png';
@@ -13,8 +13,16 @@ import cat8Src from './img/cats/cat8.png';
 import cat9Src from './img/cats/cat9.png';
 
 const cats = [
-    cat0Src, cat1Src, cat2Src, cat3Src, cat4Src, cat5Src,
-    cat6Src, cat7Src, cat8Src, cat9Src,
+    cat0Src,
+    cat1Src,
+    cat2Src,
+    cat3Src,
+    cat4Src,
+    cat5Src,
+    cat6Src,
+    cat7Src,
+    cat8Src,
+    cat9Src,
 ];
 
 export class Cat extends GameObject {
@@ -26,14 +34,14 @@ export class Cat extends GameObject {
 
         const height = 40;
 
-        super(WIDTH + catDelay, BASELINE - height, 40,  height , catSrc)
+        super(WIDTH + catDelay, BASELINE - height, 40, height, catSrc);
 
         this.catSpeed = parseInt(Math.random() * 3) - 1;
 
         this.isCaught = false;
     }
 
-    draw(context){
+    draw(context) {
         if (!this.isCaught) {
             super.draw(context);
         }
@@ -43,7 +51,7 @@ export class Cat extends GameObject {
         this.x -= worldSpeed + this.catSpeed;
     }
 
-    catchCat(){
+    catchCat() {
         this.isCaught = true;
     }
 }

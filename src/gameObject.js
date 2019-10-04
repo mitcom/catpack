@@ -13,10 +13,7 @@ export class GameObject {
     }
 
     getBox() {
-        return [
-            [this.x, this.y],
-            [this.x + this.width, this.y + this.height]
-        ];
+        return [[this.x, this.y], [this.x + this.width, this.y + this.height]];
     }
 
     checkCollision(obj) {
@@ -25,27 +22,21 @@ export class GameObject {
         const xMax = x + this.width;
         const y = this.y;
         const yMax = y + this.height;
-        const xIntersection = (
-            x <= objX && objX <= xMax ||
-            x <= objXMax && objXMax <= xMax ||
-            objX <= x && xMax <= objXMax
-        )
-        return xIntersection && (
-            y <= objY && objY <= yMax ||
-            y <= objYMax && objYMax <= yMax ||
-            objY <= y && yMax <= objYMax
+        const xIntersection =
+            (x <= objX && objX <= xMax) ||
+            (x <= objXMax && objXMax <= xMax) ||
+            (objX <= x && xMax <= objXMax);
+        return (
+            xIntersection &&
+            ((y <= objY && objY <= yMax) ||
+                (y <= objYMax && objYMax <= yMax) ||
+                (objY <= y && yMax <= objYMax))
         );
     }
 
     draw(context) {
         // context.fillRect(this.x, this.y, this.width, this.height);
-        context.drawImage(
-            this.image,
-            this.x,
-            this.y,
-            this.width,
-            this.height,
-        );
+        context.drawImage(this.image, this.x, this.y, this.width, this.height);
     }
 
     loadImage(src) {
