@@ -4,6 +4,7 @@
   "description": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "prettify": "prettier --write \"src/**/*.js\"",
     "start": "webpack-dev-server --mode development --content-base dist/ --open --hot --config webpack.config.js"
   },
   "keywords": [],
@@ -14,5 +15,8 @@
     "webpack": "^4.28.4",
     "webpack-cli": "^3.2.1",
     "webpack-dev-server": "^3.1.14"
+  },
+  "dependencies": {
+    "prettier": "^1.18.2"
   }
 }
