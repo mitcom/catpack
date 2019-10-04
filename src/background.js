@@ -2,11 +2,10 @@ import { HEIGHT, WIDTH } from './constants';
 import { GameObject } from './gameObject';
 import backgroundSrc from './img/background.png';
 
-
 export class Background extends GameObject {
     constructor() {
-        super(0, 0 , WIDTH,  HEIGHT, backgroundSrc);
-        this.distance = 0
+        super(0, 0, WIDTH, HEIGHT, backgroundSrc);
+        this.distance = 0;
     }
 
     update(worldSpeed) {
@@ -24,7 +23,7 @@ export class Background extends GameObject {
             this.x,
             this.y,
             this.width,
-            this.height,
+            this.height
         );
     }
 }
