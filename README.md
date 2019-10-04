@@ -1,4 +1,8 @@
+demo: http://cat-in-deb.surge.sh/
+
 ```bash
-npm init
+npm install
 npm start
+
+// optionally npm run prettify
 ```
